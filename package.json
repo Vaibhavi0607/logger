@@ -4,7 +4,7 @@
   "description": "This project is aimed to give a base ground for people to get started with Node project using typescript.",
   "main": "dist/index.js",
   "scripts": {
-		"build": "tsc",
+    "build": "tsc",
     "start": "tsc && node dist/index.js",
     "start:dev": "nodemon -e ts -w ./src -x npm start",
     "test": "mocha './dist/test/*.spec.js'",
@@ -21,7 +21,7 @@
     "node.js",
     "boilerplate"
   ],
-  "author": "Deepak Mali",
+  "author": "Vaibhavi Ramani",
   "license": "ISC",
   "devDependencies": {
     "@types/chai": "^4.2.18",
