@@ -2,10 +2,10 @@
   "name": "node-ts-boilerplate",
   "version": "1.0.0",
   "description": "This project is aimed to give a base ground for people to get started with Node project using typescript.",
-  "main": "dist/index.js",
+  "main": "dist/test.js",
   "scripts": {
     "build": "tsc",
-    "start": "tsc && node dist/index.js",
+    "start": "tsc && node dist/test.js",
     "start:dev": "nodemon -e ts -w ./src -x npm start",
     "test": "mocha './dist/test/*.spec.js'",
     "test:coverage": "tsc && nyc --reporter=html npm test",
@@ -46,8 +46,8 @@
     "config": "^3.3.6",
     "express": "^4.17.1",
     "joi": "^17.4.0",
-    "moment": "^2.29.1",
+    "dayjs": "^1.10.7",
     "nyc": "^15.1.0",
-    "winston": "^3.3.3"
+    "winston": "^3.4.0"
   }
 }
