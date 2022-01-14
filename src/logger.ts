@@ -1,24 +1,21 @@
 import chalk from 'chalk';
 import dayjs from 'dayjs';
 import { createLogger, format, transports } from 'winston';
-import winston from 'winston/lib/winston/config';
 
 // Create logger instance.
 export const logger = createLogger({
   level: 'debug',
-  transports: [
-    new transports.Console({})
-  ],
+  transports: [new transports.Console({})],
 
   // format log messages.
-  format: format.printf((options) => {
+  format: format.printf(options => {
     const level = options.level.toUpperCase();
     let message = `${dayjs().format()} - ${level}: `;
-    if(options.message) {
+    if (options.message) {
       message = message + options.message;
     }
     return colorMessage(level, message);
-  })
+  }),
 });
 
 /**
@@ -28,13 +25,13 @@ export const logger = createLogger({
  * @returns { string } - colored log message based on log level
  */
 const colorMessage = (level: string, message: string): string => {
-  if(level === 'INFO') {
+  if (level === 'INFO') {
     message = chalk.green(message);
-  } else if(level === 'WARN') {
+  } else if (level === 'WARN') {
     message = chalk.yellow(message);
-  } else if(level === 'ERROR') {
+  } else if (level === 'ERROR') {
     message = chalk.red(message);
-  } else if(level === 'DEBUG') {
+  } else if (level === 'DEBUG') {
     message = chalk.blue(message);
   } else {
     message = chalk.cyan(message);
